@@ -18,7 +18,9 @@ function Banner() {
             </div>
            
             </div>
-            <div className='gradient'></div>
+            <div className='gradient'>
+            <h3>Popular on Netflix</h3>
+            </div>
 
             </div>
            

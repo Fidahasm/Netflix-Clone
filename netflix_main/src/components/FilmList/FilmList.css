@@ -1,0 +1,18 @@
+.card-img{
+    height: 320px;
+    width: 205px;
+    margin-left: 6px;
+    margin-top: 6px;
+    border-radius: 5px;
+  
+   
+}
+.filmlist{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* margin-top: 10px; */
+}
+.filmlist::-webkit-scrollbar{
+    display: none;
+}

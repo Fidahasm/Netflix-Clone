@@ -9,6 +9,7 @@ function App() {
       <NavBar />
       <Banner />
       <FilmList />
+      <FilmList />
     </div>
   );
 }
