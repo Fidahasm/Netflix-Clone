@@ -11,15 +11,17 @@ function Banner() {
             <div className='buttons'>
                 <div className='btn' id='play-btn'>
                     <i class='bx bx-play'>Play</i>
-                   
-                    </div>
+                </div>
                 <div className='btn' id='list-btn'>
                     <i class='bx bx-plus'  >My List</i>
-                
-                    </div>
+                </div>
             </div>
+           
             </div>
+            <div className='gradient'></div>
+
             </div>
+           
         
       
     </div>
