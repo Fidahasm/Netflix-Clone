@@ -7,19 +7,21 @@ function Banner() {
         <div  className='banner'>
             <div className='banner-content'>
             <h1>Movie Name</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, vitae. </p>
+            <p className='desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, vitae. </p>
             <div className='buttons'>
                 <div className='btn' id='play-btn'>
-                    <i class='bx bx-play'>Play</i>
+                    <i class='bx bx-play'></i>
+                    <p>Play</p>
                 </div>
                 <div className='btn' id='list-btn'>
-                    <i class='bx bx-plus'  >My List</i>
+                    <i class='bx bx-plus'  ></i>
+                    <p>My List</p>
                 </div>
             </div>
            
             </div>
             <div className='gradient'>
-            <h3>Popular on Netflix</h3>
+            
             </div>
 
             </div>
