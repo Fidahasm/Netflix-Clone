@@ -3,12 +3,19 @@
     width: 180px;
     margin-left: 6px;
     margin-top: 6px;
-    border-radius: 5px;
+    border-radius: 10px;
+    
   
    
 }
+.card-img:hover{
+    transform: scale(1.1);
+    transition: transform 0.1s ;
+
+}
 .filmlist{
     display: flex;
+    
     overflow-x: scroll;
     overflow-y: hidden;
     /* margin-top: 10px; */
