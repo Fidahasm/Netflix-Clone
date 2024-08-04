@@ -3,11 +3,13 @@ import '../FilmList/FilmList.css'
 import axios from '../../axios'
 import { useEffect,useState } from 'react'
 import { ApiKey,ImageUrl } from '../../constant'
+import Youtube from 'react-youtube'
 
  
 
 function FilmList(props) {
   const [movie, setMovie] = useState([])
+  const [urlId, setUrlId] = useState('')
   useEffect(() => {
     axios.get(props.url).then((response) =>{
       console.log(response.data.results)
@@ -16,16 +18,36 @@ function FilmList(props) {
     })
    
   }, [])
-  
+  const opts = {
+    height: '390',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 0,
+    },
+  };
+  const handleMovie = (id)=>{
+    console.log(id)
+    axios.get(`/movie/${id}/videos?api_key=${ApiKey}&language=en-US`).then((response)=>{
+      if(response.data.results.length!==0){
+        setUrlId(response.data.results[0])
+      }
+      else{
+        console.log("Array Empty!")
+      }
+    })
+
+  }
   return (
     <div>
         <h3>{props.title}</h3>
         <div className='filmlist'>
           {movie.map((item)=>
-                      <img className='card-img' src={`${ImageUrl+item.poster_path}`} alt="card" />
+                      <img onMouseEnter={() =>handleMovie(item.id)} className='card-img' src={`${ImageUrl+item.poster_path}`} alt="card" />
                     )}
 
             </div>
+          { urlId &&  <Youtube opts={opts} videoId={urlId.key}/>}
             
       
     </div>
