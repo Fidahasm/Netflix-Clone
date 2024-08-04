@@ -43,7 +43,7 @@ function FilmList(props) {
         <h3>{props.title}</h3>
         <div className='filmlist'>
           {movie.map((item)=>
-                      <img onMouseEnter={() =>handleMovie(item.id)} className='card-img' src={`${ImageUrl+item.poster_path}`} alt="card" />
+                      <img onMouseEnter={() =>handleMovie(item.id)} onMouseLeave={() =>{setUrlId('')}} className='card-img' src={`${ImageUrl+item.poster_path}`} alt="card" />
                     )}
 
             </div>
