@@ -23,9 +23,10 @@ function FilmList(props) {
     width: '100%',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 0,
+      autoplay: 1,
     },
   };
+
   const handleMovie = (id)=>{
     console.log(id)
     axios.get(`/movie/${id}/videos?api_key=${ApiKey}&language=en-US`).then((response)=>{
@@ -35,9 +36,13 @@ function FilmList(props) {
       else{
         console.log("Array Empty!")
       }
-    })
-
+    }).catch((error)=>
+      {
+        console.log("Error Found")
+      })
   }
+  console.log(movie.id)
+
   return (
     <div>
         <h3>{props.title}</h3>

@@ -9,7 +9,7 @@ function Banner() {
   useEffect(() => {
    axios.get(`/trending/all/week?api_key=${ApiKey}&language=en-US`).then((response)=>{
     console.log(response.data.results[0])
-    setMovie(response.data.results)
+    setMovie(response.data.results.slice(0, 5))
     setCurrentMovieIndex(0)
    })
   }, [])
@@ -22,6 +22,9 @@ function Banner() {
    }, 5000);
    return()=>clearInterval(interval);
   }, [movie]);
+  const handleNextMovie = () => {
+    setCurrentMovieIndex((prevIndex) => (prevIndex + 1) % movie.length);
+  };
    const currentMovie = movie[currentMovieIndex]
   
   return (
@@ -41,11 +44,15 @@ function Banner() {
                     <p>My List</p>
                 </div>
             </div>
+
            
             </div>
+             <div className='swipe'><i class='bx bx-chevron-right' onClick={handleNextMovie}></i></div>
+
             <div className='gradient'></div>
 
             </div>
+            
            
         
       
